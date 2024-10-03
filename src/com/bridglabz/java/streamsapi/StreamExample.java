@@ -15,9 +15,8 @@ public class StreamExample {
         List<Double> doubleNumbers = numbers.stream().map(number -> number * 2.0) //Transform each element to double
                                                      .collect(Collectors.toList()); // Collect the result into a new list
 
-        //Print the transformed list
-        doubleNumbers.forEach(doubleNumber -> System.out.println("Double Number " + doubleNumber));
-
+        // Print the new list of doubles
+        System.out.println("Transformed List: " + doubleNumbers);
 
     }
 }
