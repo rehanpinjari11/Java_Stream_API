@@ -11,18 +11,18 @@ public class StreamExample {
         //Create a list of integers
         List<Integer> numbers = Arrays.asList(7, 3, 10, 4, 9, 6, 2, 15);
 
-        // Find the sum of the numbers in the stream
-        int sum = numbers.stream().mapToInt(Integer::intValue)  // Convert Integer to int
-                                  .sum();  // Find the sum of the numbers
+        // Check if all numbers are even using allMatch
+        boolean allEven = numbers.stream()
+                .allMatch(number -> number % 2 == 0); // Check if all numbers are even
 
 
-        // Find the average of the numbers in the stream
-        OptionalDouble average = numbers.stream().mapToInt(Integer::intValue)  // Convert Integer to int
-                                                 .average();  // Find the average of the numbers
+        // Check if at least one number is even using anyMatch
+        boolean anyEven = numbers.stream()
+                .anyMatch(number -> number % 2 == 0); // Check if any number is even
 
-        // Print the sum and average
-        System.out.println("Sum: " + sum);
-        average.ifPresent(avg -> System.out.println("Average: " + avg));
+        // Print the results
+        System.out.println("Are all numbers even? " + allEven);
+        System.out.println("Is there at least one even number? " + anyEven);
 
     }
 }
